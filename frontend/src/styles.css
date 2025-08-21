@@ -1,0 +1,67 @@
+.sidebar {
+  width: 260px;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 2px 0 8px #e5e7eb;
+}
+.sidebar-title {
+  font-weight: 700;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #2563eb;
+}
+.sidebar-new-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  margin: 0 16px 8px 16px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+.sidebar-recent-label {
+  margin: 0 16px 8px 16px;
+  color: #888;
+  font-size: 14px;
+}
+.sidebar-recent-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 16px;
+  flex: 1;
+}
+.sidebar-recent-item {
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: none;
+  margin-bottom: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sidebar-recent-item.active {
+  background: #f1f5f9;
+}
+.sidebar-footer {
+  margin: 0 16px;
+  color: #aaa;
+  font-size: 13px;
+  margin-top: auto;
+}
+.sidebar-footer-hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 16px 0;
+}
+.sidebar-footer-help {
+  margin-top: 8px;
+}
