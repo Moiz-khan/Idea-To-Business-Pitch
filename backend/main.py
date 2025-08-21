@@ -8,14 +8,18 @@ import json
 from fastapi.middleware.cors import CORSMiddleware 
 
 # Initialization model immediately after server is Up!
-model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+device = "cuda" if torch.cuda.is_available() else "cpu"
+dtype = torch.float16 if device == "cuda" else torch.float32
+
+# TinyLlama/TinyLlama-1.1B-Chat-v1.0
+model_name = "distilgpt2"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
-    torch_dtype=torch.float32
+    torch_dtype=dtype
 )
-device = "cpu"
-model = model.to("cpu")
+
+model = model.to(device)
 
 app = FastAPI()
 
@@ -54,7 +58,7 @@ async def generate_prompt(req: PromptRequest):
     try: 
         output = model.generate(
             **inputs,
-            max_new_tokens=700,
+            max_new_tokens=300,
             do_sample=True,
             temperature=1.0
         )
