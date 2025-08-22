@@ -86,8 +86,8 @@ async def generate_prompt(req: PromptRequest):
         return {"raw": text}
     
 
-@app.get("/health")
+@app.get("/")
 def get_health():
-    return {"status": "Ok!"}
+    return {"status": "Backend is Up!"}
     
     
