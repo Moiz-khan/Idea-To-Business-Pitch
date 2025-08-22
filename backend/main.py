@@ -7,7 +7,7 @@ import requests
 import json
 from fastapi.middleware.cors import CORSMiddleware
 
-os.environ["TRANSFORMERS_CACHE"] = "/code/transformers_cache"
+os.environ["TRANSFORMERS_CACHE"] = "/backend/transformers_cache"
 os.makedirs(os.environ["TRANSFORMERS_CACHE"], exist_ok=True)
 
 
