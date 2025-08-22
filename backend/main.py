@@ -5,7 +5,11 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import requests
 import json
-from fastapi.middleware.cors import CORSMiddleware 
+from fastapi.middleware.cors import CORSMiddleware
+
+os.environ["TRANSFORMERS_CACHE"] = "/code/transformers_cache"
+os.makedirs(os.environ["TRANSFORMERS_CACHE"], exist_ok=True)
+
 
 # Initialization model immediately after server is Up!
 device = "cuda" if torch.cuda.is_available() else "cpu"
