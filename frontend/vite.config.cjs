@@ -1,8 +1,9 @@
-const { defineConfig } = require("vite");
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-module.exports = defineConfig(async () => {
-  const react = (await import("@vitejs/plugin-react")).default;
-  return {
-    plugins: [react()],
-  };
-});
+export default defineConfig({
+  plugins: [react()],
+  build: {
+    outDir: 'dist',
+  }
+})
