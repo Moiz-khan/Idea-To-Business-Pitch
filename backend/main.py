@@ -64,7 +64,9 @@ async def generate_prompt(req: PromptRequest):
             **inputs,
             max_new_tokens=300,
             do_sample=True,
-            temperature=1.0
+            temperature=1.0,
+            top_k=50,
+            top_p=0.9
         )
         text = tokenizer.decode(output[0], skip_special_tokens=True)
 
