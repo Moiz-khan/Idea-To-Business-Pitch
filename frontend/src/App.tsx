@@ -51,7 +51,7 @@ export default function App(){
         setRaw('')
 
         try{
-            const res = await fetch(import.meta.env.VITE_API_BASE_URL ? `${import.meta.env.VITE_API_BASE_URL}`: '/generate',
+            const res = await fetch(import.meta.env.VITE_API_BASE_URL ? `${import.meta.env.VITE_API_BASE_URL}generate-prompt` : '/generate',
             {
                 method: 'POST',
                 headers:{
