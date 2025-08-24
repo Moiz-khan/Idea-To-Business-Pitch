@@ -20,7 +20,7 @@ export default function App(){
     const [loading, setLoading] = useState(false)
     const [Sections, setSections] = useState<Sections | null>(null)
     const [raw, setRaw] =  useState('')
-    const [recentIdeas, setRecentIdeas] = useState<string[]>(["AI for Farmers"])
+    const [recentIdeas, setRecentIdeas] = useState<string[]>(["AI for Software Developers"])
 
     function handleNewPitch() {
         if (idea.trim() !== "") {
